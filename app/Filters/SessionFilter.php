@@ -10,7 +10,7 @@ class SessionFilter implements FilterInterface
     {
         if (!session()->has('userId'))
         {
-            return redirect()->to(site_url('login')); 
+            return redirect()->to(base_url('login')); 
         }
     }
 

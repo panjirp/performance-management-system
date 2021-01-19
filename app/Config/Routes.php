@@ -34,6 +34,9 @@ $routes->get('login', 'Login::index');
 $routes->post('login/login_process', 'Login::login_process');
 
 $routes->get('/home', 'Home::index', ['filter' => 'sessionCheck']);
+$routes->get('/employee', 'Employee::index', ['filter' => 'sessionCheck']);
+$routes->get('/employee/new', 'Employee::new', ['filter' => 'sessionCheck']);
+
 
 /**
  * --------------------------------------------------------------------
