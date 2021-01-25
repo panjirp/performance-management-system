@@ -24,7 +24,7 @@
             </a>
           </div><!-- col -->
           <div class="col-10 col-sm-6 col-md-4 col-lg-3 mg-t-40 mg-md-t-0 d-flex flex-column">
-            <a href="#">
+            <a href="pica">
                 <div class="card border-0">
                   <img src="<?php echo base_url(); ?>/assets/img/statistics.png" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -41,7 +41,7 @@
             <div class="card border-0">
               <img src="<?php echo base_url(); ?>/assets/img/360-degrees.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h6 class="card-title">360 Degree Evaluasi</h6>
+                <h6 class="card-title">360° Evaluasi</h6>
               </div>
             </div>
           </a>
@@ -57,7 +57,7 @@
             </a>
           </div><!-- col -->
           <div class="col-10 col-sm-6 col-md-4 col-lg-3 mg-t-40 mg-md-t-0 d-flex flex-column">
-            <a href="#">
+            <a href="operational">
                 <div class="card border-0">
                   <img src="<?php echo base_url(); ?>/assets/img/settings.png" class="card-img-top" alt="...">
                   <div class="card-body">

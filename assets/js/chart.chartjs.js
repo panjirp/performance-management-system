@@ -391,7 +391,7 @@ $(function(){
     }
   };
 
-  // For a doughnut chart
+  For a doughnut chart
   var ctx8 = document.getElementById('chartPie');
   var myPieChart = new Chart(ctx8, {
     type: 'doughnut',
@@ -399,7 +399,7 @@ $(function(){
     options: optionpie
   });
 
-  // For a pie chart
+  For a pie chart
   var ctx9 = document.getElementById('chartDonut');
   var myDonutChart = new Chart(ctx9, {
     type: 'pie',

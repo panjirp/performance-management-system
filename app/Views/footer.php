@@ -7,6 +7,7 @@
   <script src="<?php echo base_url(); ?>/lib/jquery.flot/jquery.flot.resize.js"></script>
   <script src="<?php echo base_url(); ?>/lib/jqvmap/jquery.vmap.min.js"></script>
   <script src="<?php echo base_url(); ?>/lib/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <script src="<?php echo base_url(); ?>/lib/chart.js/Chart.bundle.min.js"></script>
 
   <script src="<?php echo base_url(); ?>/assets/js/dashforge.js"></script>
   <script src="<?php echo base_url(); ?>/lib/prismjs/prism.js"></script>
@@ -15,6 +16,7 @@
   <script src="<?php echo base_url(); ?>/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
   <script src="<?php echo base_url(); ?>/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
   <script src="<?php echo base_url(); ?>/lib/select2/js/select2.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/js/dashforge.sampledata.js"></script>
 
 </body>
 

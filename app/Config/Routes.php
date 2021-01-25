@@ -36,6 +36,14 @@ $routes->post('login/login_process', 'Login::login_process');
 $routes->get('/home', 'Home::index', ['filter' => 'sessionCheck']);
 $routes->get('/employee', 'Employee::index', ['filter' => 'sessionCheck']);
 $routes->get('/employee/new', 'Employee::new', ['filter' => 'sessionCheck']);
+$routes->get('/employee/edit/(:segment)', 'Employee::edit', ['filter' => 'sessionCheck']);
+$routes->get('/operational', 'Operational::index', ['filter' => 'sessionCheck']);
+$routes->get('/master/department', 'Master::department', ['filter' => 'sessionCheck']);
+$routes->get('/master/department/new_department', 'Master::new_department', ['filter' => 'sessionCheck']);
+$routes->get('/master/department/edit_department/(:segment)', 'Master::edit_department', ['filter' => 'sessionCheck']);
+$routes->get('/master/job_position', 'Master::job_position', ['filter' => 'sessionCheck']);
+$routes->get('/master/job_position/new_job_position', 'Master::new_job_position', ['filter' => 'sessionCheck']);
+$routes->get('/master/job_position/edit_job_position/(:segment)', 'Master::edit_job_position', ['filter' => 'sessionCheck']);
 
 
 /**

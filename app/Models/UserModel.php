@@ -34,15 +34,15 @@ class UserModel extends Model {
     }
 
     function deleteUser($id){
-        $data = array(
-          'status' => 'Deleted',
-          'modified_by' => session()->get('userId'),
-          'date_time_modified' => date('Y-m-d H:i:s')
-        );
+      $data = array(
+        'status' => 'Deleted',
+        'modified_by' => session()->get('userId'),
+        'date_time_modified' => date('Y-m-d H:i:s')
+      );
   
-        $builder = $this->db->table('user');
-        $builder->where('id', $id);
-        return $builder->update($data);
-      }
+      $builder = $this->db->table('user');
+      $builder->where('id', $id);
+      return $builder->update($data);
+    }
 
 }

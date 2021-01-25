@@ -41,4 +41,9 @@ class Login extends BaseController
 		return redirect()->to(site_url('login')); 
 	}
 
+	public function forgot_password()
+	{
+		return view('forgot_password');
+	}
+
 }

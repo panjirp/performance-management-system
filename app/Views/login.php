@@ -48,13 +48,13 @@
                 <div class="form-group">
                   <div class="d-flex justify-content-between mg-b-5">
                     <label class="mg-b-0-f">Password</label>
-                    <a href="" class="tx-13">Forgot password?</a>
+                    <a href="<?php echo base_url("login/forgot_password"); ?>" class="tx-13">Forgot password?</a>
                   </div>
                   <input type="password" class="form-control" placeholder="Enter your password" name="password" required>
                 </div>
                 <button class="btn btn-brand-02 btn-block">Sign In</button>
               </form>
-              <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a href="page-signup.html">Create an Account</a></div>
+              <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a href="<?php echo base_url("signup"); ?>">Create an Account</a></div>
             </div>
           </div><!-- sign-wrapper -->
         </div><!-- media -->
