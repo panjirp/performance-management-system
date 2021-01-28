@@ -27,11 +27,63 @@
                 <input type="text" name="empName" class="form-control" placeholder="Masukkan Nama Karyawan" value="<?php echo $user[0]->name;?>" required>
                 <div class="invalid-feedback">Wajib Isi</div>
               </div>
+
               <div class="form-group">
                 <p class="text-req mt-4">No. Karyawan<em>*</em></p>
                 <input type="text" name="empId" class="form-control" placeholder="Masukkan No. Karyawan" value="<?php echo $user[0]->emp_id;?>" required>
                 <div class="invalid-feedback">Wajib Isi</div>
               </div>
+
+              <div class="form-group">
+                <p class="text-req mt-4">Department<em>*</em></p>
+                <select class="custom-select" id="departmentId" name="departmentId" required>
+                  <option value="0" selected disabled>Pilih Department</option>
+                  <?php 
+                  for ($i = 0; $i < count($department); $i++) {
+                    if($department[$i]->id == $user[0]->master_department_id){
+                      echo "<option value=" . $department[$i]->id . " selected>" . $department[$i]->name . "</option>";
+                    }else{
+                      echo "<option value=" . $department[$i]->id . ">" . $department[$i]->name . "</option>";
+                    }
+                  } 
+                  ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <p class="text-req mt-4">Jabatan<em>*</em></p>
+                <select class="custom-select" id="jobPositionId" name="jobPositionId" required>
+                  <option value="0" selected disabled>Pilih Jabatan</option>
+                  <?php 
+                  for ($i = 0; $i < count($jobPosition); $i++) {
+                    if($jobPosition[$i]->id == $user[0]->master_position_id){
+                      echo "<option value=" . $jobPosition[$i]->id . " selected>" . $jobPosition[$i]->name . "</option>";
+                    }else{
+                      echo "<option value=" . $jobPosition[$i]->id . ">" . $jobPosition[$i]->name . "</option>";
+                    }
+                  } 
+                  ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <p class="text-req mt-4">Atasan<em>*</em></p>
+                <select class="custom-select" id="bossId" name="bossId" required>
+                  <option value="0" selected disabled>Pilih Atasan</option>
+                  <?php 
+                  for ($i = 0; $i < count($allUser); $i++) {
+                    if($allUser[$i]->id != $user[0]->id){
+                      if($allUser[$i]->id == $userBoss[0]->user_boss_id){
+                        echo "<option value=" . $allUser[$i]->id . " selected>".$allUser[$i]->name." - ".$allUser[$i]->departmentName." - ".$allUser[$i]->positionName."</option>";
+                      }else{
+                        echo "<option value=" . $allUser[$i]->id . ">".$allUser[$i]->name." - ".$allUser[$i]->departmentName." - ".$allUser[$i]->positionName."</option>";
+                      }
+                    }
+                  } 
+                  ?>
+                </select>
+              </div>
+
               <div class="form-group">
                 <p class="text-req">Email <em>*</em></p>
                 <input type="email" name="email" class="form-control" placeholder="Masukkan Email" value="<?php echo $user[0]->email;?>" required>

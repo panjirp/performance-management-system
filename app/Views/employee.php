@@ -100,10 +100,10 @@
                     <td><?php echo $user[$i]->name; ?></td>
                     <td><?php echo $user[$i]->email; ?></td>
                     <td><?php echo $user[$i]->birth_date; ?></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $user[$i]->departmentName; ?></td>
+                    <td><?php echo $user[$i]->positionName; ?></td>
                     <td><?php echo $user[$i]->entry_date; ?></td>
-                    <td></td>
+                    <td><?php echo $user[$i]->bossName; ?></td>
                     <td>
                       <!-- Edit -->
                       <a href="<?php echo base_url('employee/edit/'.$user[$i]->id); ?>">

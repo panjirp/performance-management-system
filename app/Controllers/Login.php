@@ -5,7 +5,7 @@ use App\Models\LoginModel;
 class Login extends BaseController
 {
 	public function index()
-	{
+	{	
 		return view('login');
 	}
 
@@ -30,9 +30,9 @@ class Login extends BaseController
 			);
  
 			$this->session->set($data_session);
-			return redirect()->to(site_url('home')); 
+			return redirect()->to(site_url('home'));
 		}else{
-			return redirect()->to(site_url('login')); 
+			return redirect()->to(site_url('login?status=failed')); 
 		}
 	}
 

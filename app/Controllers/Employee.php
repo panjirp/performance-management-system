@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 use App\Models\UserModel;
+use App\Models\MasterModel;
 
 class Employee extends BaseController
 {
@@ -15,7 +16,17 @@ class Employee extends BaseController
     
     public function new()
 	{
-		return view('employee_new');
+		$UserModel = new UserModel();
+		$MasterModel = new MasterModel();
+		$department = $MasterModel->getAllActiveDepartment();
+		$jobPosition = $MasterModel->getAllActiveJobPosition();
+        $user = $UserModel->getAllActiveUser();
+		$data = array(
+			'department' => $department->getResult(),
+			'jobPosition' => $jobPosition->getResult(),
+			'user' => $user->getResult()
+		);
+		return view('employee_new',$data);
     }
     
     function input_process(){
@@ -24,6 +35,8 @@ class Employee extends BaseController
             'name' => $this->request->getPost('empName'),
             'password' => md5($this->request->getPost('password')),
             'emp_id' => $this->request->getPost('empId'),
+            'master_department_id' => $this->request->getPost('departmentId'),
+            'master_position_id' => $this->request->getPost('jobPositionId'),
             'email' => $this->request->getPost('email'),
             'birth_date' => $this->request->getPost('birthDate'),
             'entry_date' => $this->request->getPost('entryDate'),
@@ -33,7 +46,16 @@ class Employee extends BaseController
         );
 		$insert = $UserModel->add($data);
 
-		if($insert){
+		$data2 = array(
+			'user_id' => $insert, 
+			'user_boss_id' => $this->request->getPost('bossId'),
+            'status' => 'Active',
+            'created_by' => session()->get('userId'),
+            'date_time_created' => date('Y-m-d H:i:s')
+		);
+		$insert2 = $UserModel->addUserBoss($data2);
+
+		if($insert2){
             return redirect()->to(base_url('employee')); 
 		}
     }
@@ -41,10 +63,19 @@ class Employee extends BaseController
     public function edit()
 	{
 		$UserModel = new UserModel();
+		$MasterModel = new MasterModel();
 		$userId = $this->request->uri->getSegment(3);
 		$user = $UserModel->getUserById($userId);
+		$userBoss = $UserModel->getUserBoss($userId);
+		$allUser = $UserModel->getAllActiveUser();
+		$department = $MasterModel->getAllActiveDepartment();
+		$jobPosition = $MasterModel->getAllActiveJobPosition();
 		$data = array(
-			'user' => $user->getResult()
+			'department' => $department->getResult(),
+			'jobPosition' => $jobPosition->getResult(),
+			'user' => $user->getResult(),
+			'userBoss' => $userBoss->getResult(),
+			'allUser' => $allUser->getResult()
 		);
 		return view('employee_edit',$data);
     }
@@ -57,6 +88,8 @@ class Employee extends BaseController
             'name' => $this->request->getPost('empName'),
             'password' => md5($this->request->getPost('password')),
             'emp_id' => $this->request->getPost('empId'),
+            'master_department_id' => $this->request->getPost('departmentId'),
+            'master_position_id' => $this->request->getPost('jobPositionId'),
             'email' => $this->request->getPost('email'),
             'birth_date' => $this->request->getPost('birthDate'),
             'entry_date' => $this->request->getPost('entryDate'),
@@ -65,7 +98,14 @@ class Employee extends BaseController
         );
 		$edit = $UserModel->editUser($userId,$data);
 
-		if($edit){
+		$data2 = array(
+			'user_boss_id' => $this->request->getPost('bossId'),
+            'modified_by' => session()->get('userId'),
+			'date_time_modified' => date('Y-m-d H:i:s')
+		);
+		$edit2 = $UserModel->editUserBoss($userId,$data2);
+
+		if($edit2){
             return redirect()->to(base_url('employee')); 
 		}
 	}

@@ -18,6 +18,19 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `user_hierarchy`;
+CREATE TABLE IF NOT EXISTS `user_hierarchy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) NOT NULL,
+  `user_boss_id` varchar(255) NOT NULL,
+  `status` varchar(11) NULL,
+  `created_by` int(11) NOT NULL,
+  `date_time_created` DATETIME NOT NULL,
+  `modified_by` int(11) NOT NULL,
+  `date_time_modified` DATETIME NOT NULL DEFAULT '2000-01-01 00:00:00',
+  PRIMARY KEY (`id`)
+);
+
 DROP TABLE IF EXISTS `master_department`;
 CREATE TABLE IF NOT EXISTS `master_department` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

@@ -19,7 +19,8 @@ class Signup extends BaseController
 			'email' => $email,
 			'name' => $name,
 			'password' => $password,
-			'date_time_created' => date('Y-m-d H:i:s')
+			'date_time_created' => date('Y-m-d H:i:s'),
+			'status' => 'Active'
 		);
 
 		$register = $UserModel->add($where);

@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
+  <title>Bexel - Performance System Management</title>
+
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/img/logo.svg">
-
-  <title>Performance System Management</title>
-
+  <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>/assets/img/bexel-icon.ico"/>
   <!-- vendor css -->
   <link href="<?php echo base_url(); ?>/lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>/lib/ionicons/css/ionicons.min.css" rel="stylesheet">

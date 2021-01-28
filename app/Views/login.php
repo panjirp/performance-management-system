@@ -9,9 +9,9 @@
     <!-- Meta -->
     <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
     <meta name="author" content="ThemePixels">
-
+    
     <!-- Favicon -->
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>/assets/img/favicon.png"> -->
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>/assets/img/bexel-icon.ico"/>
 
     <title>Performance Management System</title>
 
@@ -35,11 +35,17 @@
           </div><!-- media-body -->
           <div class="sign-wrapper mg-lg-l-50 mg-xl-l-60">
             <div class="wd-100p">
+            <?php 
+              if(isset($_GET['status']) && $_GET['status'] == "failed"){
+                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Login Gagal, Pastikan Email dan Password Anda Benar</strong>';
+                echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+              } 
+            ?>
               <h3 class="tx-color-01 mg-b-5">Sign In</h3>
               <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
 
             
-              <form action="<?php echo 'login/login_process'; ?>" method="post">
+              <form action="<?php echo base_url('login/login_process'); ?>" method="post">
                 <div class="form-group">
                   <label>Email address</label>
                   <input type="email" class="form-control" placeholder="yourname@yourmail.com" name="email" required>

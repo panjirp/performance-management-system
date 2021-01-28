@@ -20,18 +20,53 @@
       <div class="d-flex justify-content-center">
         <div class="card card bg-white w-75">
           <div class="card-body pb-2">
-            <form class="needs-validation was-validated" novalidate action="<?php echo base_url("employee/input_process"); ?>" method="post">
+            <form class="needs-validation was-validated" action="<?php echo base_url("employee/input_process"); ?>" method="post">
 
               <div class="form-group">
                 <p class="text-req">Nama<em>*</em></p>
                 <input type="text" name="empName" class="form-control" placeholder="Masukkan Nama Karyawan" required>
                 <div class="invalid-feedback">Wajib Isi</div>
               </div>
+
               <div class="form-group">
                 <p class="text-req mt-4">No. Karyawan<em>*</em></p>
                 <input type="text" name="empId" class="form-control" placeholder="Masukkan No. Karyawan" required>
                 <div class="invalid-feedback">Wajib Isi</div>
               </div>
+
+              <div class="form-group">
+                <p class="text-req mt-4">Department<em>*</em></p>
+                <select class="custom-select" id="departmentId" name="departmentId" required>
+                  <option value="0" selected disabled>Pilih Department</option>
+                  <?php for ($i = 0; $i < count($department); $i++) {
+                    echo "<option value=" . $department[$i]->id . ">" . $department[$i]->name . "</option>";
+                  } 
+                  ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <p class="text-req mt-4">Jabatan<em>*</em></p>
+                <select class="custom-select" id="jobPositionId" name="jobPositionId" required>
+                  <option value="0" selected disabled>Pilih Jabatan</option>
+                  <?php for ($i = 0; $i < count($jobPosition); $i++) {
+                    echo "<option value=" . $jobPosition[$i]->id . ">" . $jobPosition[$i]->name . "</option>";
+                  } 
+                  ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <p class="text-req mt-4">Atasan<em>*</em></p>
+                <select class="custom-select" id="bossId" name="bossId" required>
+                  <option value="0" selected disabled>Pilih Atasan</option>
+                  <?php for ($i = 0; $i < count($user); $i++) {
+                    echo "<option value=" . $user[$i]->id . ">".$user[$i]->name." - ".$user[$i]->departmentName." - ".$user[$i]->positionName."</option>";
+                  } 
+                  ?>
+                </select>
+              </div>
+
               <div class="form-group">
                 <p class="text-req">Email <em>*</em></p>
                 <input type="email" name="email" class="form-control" placeholder="Masukkan Email" required>
