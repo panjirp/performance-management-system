@@ -30,7 +30,7 @@
         <div class="media align-items-stretch justify-content-center ht-100p pos-relative">
           <div class="media-body align-items-center d-none d-lg-flex">
             <div class="mx-wd-600">
-              <img src="<?php echo base_url(); ?>/assets/img/karabha.png" class="img-fluid" alt="">
+              <!-- <img src="<?php echo base_url(); ?>/assets/img/karabha.png" class="img-fluid" alt=""> -->
             </div>
           </div><!-- media-body -->
           <div class="sign-wrapper mg-lg-l-50 mg-xl-l-60">

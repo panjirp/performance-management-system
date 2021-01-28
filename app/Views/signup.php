@@ -55,7 +55,7 @@
           </div><!-- sign-wrapper -->
           <div class="media-body pd-y-30 pd-lg-x-50 pd-xl-x-60 align-items-center d-none d-lg-flex pos-relative">
             <div class="mx-lg-wd-500 mx-xl-wd-550">
-                <img src="<?php echo base_url(); ?>/assets/img/karabha.png" class="img-fluid" alt="">
+                <!-- <img src="<?php echo base_url(); ?>/assets/img/karabha.png" class="img-fluid" alt=""> -->
             </div>
           </div><!-- media-body -->
         </div><!-- media -->
