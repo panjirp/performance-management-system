@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `birth_date` DATE NOT NULL,
   `master_department_id` int(11) NOT NULL,
   `master_position_id` int(11) NOT NULL,
+  `role` int(1) NOT NULL COMMENT '1: admin',
   `entry_date` DATE NOT NULL,
   `status` varchar(11) NULL,
   `created_by` int(11) NOT NULL,
@@ -108,6 +109,48 @@ CREATE TABLE IF NOT EXISTS `user_kpi_action` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_kpi_problem_id` int(11) NOT NULL,
   `action` TEXT NOT NULL,
+  `status` varchar(11) NULL,
+  `created_by` int(11) NOT NULL,
+  `date_time_created` DATETIME NOT NULL,
+  `modified_by` int(11) NOT NULL,
+  `date_time_modified` DATETIME NOT NULL DEFAULT '2000-01-01 00:00:00',
+  PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `stakeholder_feedback_report_question`;
+CREATE TABLE IF NOT EXISTS `stakeholder_feedback_report_question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `question` TEXT NOT NULL,
+  `status` varchar(11) NULL,
+  `created_by` int(11) NOT NULL,
+  `date_time_created` DATETIME NOT NULL,
+  `modified_by` int(11) NOT NULL,
+  `date_time_modified` DATETIME NOT NULL DEFAULT '2000-01-01 00:00:00',
+  PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `stakeholder_feedback_report_sub_question`;
+CREATE TABLE IF NOT EXISTS `stakeholder_feedback_report_sub_question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `question_id` int(11) NOT NULL,
+  `sub_question` TEXT NOT NULL,
+  `status` varchar(11) NULL,
+  `created_by` int(11) NOT NULL,
+  `date_time_created` DATETIME NOT NULL,
+  `modified_by` int(11) NOT NULL,
+  `date_time_modified` DATETIME NOT NULL DEFAULT '2000-01-01 00:00:00',
+  PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `stakeholder_feedback_report`;
+CREATE TABLE IF NOT EXISTS `stakeholder_feedback_report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `stakeholder_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `sub_question_id` int(11) NOT NULL,
+  `answer` TEXT NOT NULL,
+  `month` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
   `status` varchar(11) NULL,
   `created_by` int(11) NOT NULL,
   `date_time_created` DATETIME NOT NULL,

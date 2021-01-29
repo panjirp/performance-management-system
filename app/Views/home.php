@@ -37,7 +37,7 @@
 
         <div class="row justify-content-center">
           <div class="col-10 col-sm-6 col-md-4 col-lg-3">
-          <a href="#">
+          <a href="threesixty">
             <div class="card border-0 h-100">
               <img src="<?php echo base_url(); ?>/assets/img/360-degrees.png" class="card-img-top" alt="...">
               <div class="card-body">
@@ -47,7 +47,7 @@
           </a>
           </div><!-- col -->
           <div class="col-10 col-sm-6 col-md-4 col-lg-3">
-            <a href="#">
+            <a href="report">
               <div class="card border-0 h-100">
                 <img src="<?php echo base_url(); ?>/assets/img/monitor.png" class="card-img-top" alt="...">
                 <div class="card-body">

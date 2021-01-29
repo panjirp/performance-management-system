@@ -9,7 +9,7 @@
               <li class="breadcrumb-item"><a href="<?php echo base_url('kpi'); ?>">Key Performance Index</a></li>
             </ol>
           </nav>
-          <h3>Project Management System</h3>
+          <h3>Performance Management System</h3>
         </div>
       </div>
 

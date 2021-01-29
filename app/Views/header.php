@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/dashforge.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/dashforge.dashboard.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/dashforge.auth.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/lib/quill/quill.core.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/lib/quill/quill.snow.css">
   
 </head>
 

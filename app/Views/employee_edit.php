@@ -20,7 +20,7 @@
       <div class="d-flex justify-content-center">
         <div class="card card bg-white w-75">
           <div class="card-body pb-2">
-            <form class="needs-validation was-validated" novalidate action="<?php echo base_url("employee/edit_process"); ?>" method="post">
+            <form class="needs-validation was-validated" action="<?php echo base_url("employee/edit_process"); ?>" method="post">
 
               <div class="form-group">
                 <p class="text-req">Nama<em>*</em></p>
@@ -68,7 +68,7 @@
 
               <div class="form-group">
                 <p class="text-req mt-4">Atasan<em>*</em></p>
-                <select class="custom-select" id="bossId" name="bossId" required>
+                <select class="custom-select" id="bossId" name="bossId">
                   <option value="0" selected disabled>Pilih Atasan</option>
                   <?php 
                   for ($i = 0; $i < count($allUser); $i++) {
@@ -102,10 +102,10 @@
                 <div class="invalid-feedback">Wajib Isi</div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label class="text-req">Password<em>*</em></label>
                   <input type="password" id="myInput" name="password" class="form-control" placeholder="Masukkan Password Anda" required>
-              </div>
+              </div> -->
 
               <div class="float-right">
                 <input name="userId" value="<?php echo $user[0]->id;?>" style="display:none">

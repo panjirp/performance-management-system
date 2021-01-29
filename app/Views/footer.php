@@ -17,13 +17,14 @@
   <script src="<?php echo base_url(); ?>/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
   <script src="<?php echo base_url(); ?>/lib/select2/js/select2.min.js"></script>
   <script src="<?php echo base_url(); ?>/assets/js/dashforge.sampledata.js"></script>
+  <script src="<?php echo base_url(); ?>/lib/quill/quill.min.js"></script>
 
 </body>
 
 <footer class="footer">
       <div>
         <span>&copy; 2021 Performance Management System v1.0.0. </span>
-        <span>Created by Phoenix Inspirasi</span>
+        <span>Created by Business Excellent</span>
       </div>
 </footer>
 

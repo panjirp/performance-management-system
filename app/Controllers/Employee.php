@@ -45,17 +45,18 @@ class Employee extends BaseController
             'date_time_created' => date('Y-m-d H:i:s')
         );
 		$insert = $UserModel->add($data);
+		if(null != $this->request->getPost('bossId')){
+			$data2 = array(
+				'user_id' => $insert, 
+				'user_boss_id' => $this->request->getPost('bossId'),
+				'status' => 'Active',
+				'created_by' => session()->get('userId'),
+				'date_time_created' => date('Y-m-d H:i:s')
+			);
+			$insert2 = $UserModel->addUserBoss($data2);
+		}
 
-		$data2 = array(
-			'user_id' => $insert, 
-			'user_boss_id' => $this->request->getPost('bossId'),
-            'status' => 'Active',
-            'created_by' => session()->get('userId'),
-            'date_time_created' => date('Y-m-d H:i:s')
-		);
-		$insert2 = $UserModel->addUserBoss($data2);
-
-		if($insert2){
+		if($insert){
             return redirect()->to(base_url('employee')); 
 		}
     }
@@ -86,7 +87,7 @@ class Employee extends BaseController
 		$userId = $this->request->getPost('userId');
 		$data = array(
             'name' => $this->request->getPost('empName'),
-            'password' => md5($this->request->getPost('password')),
+            //'password' => md5($this->request->getPost('password')),
             'emp_id' => $this->request->getPost('empId'),
             'master_department_id' => $this->request->getPost('departmentId'),
             'master_position_id' => $this->request->getPost('jobPositionId'),
@@ -97,15 +98,16 @@ class Employee extends BaseController
 			'date_time_modified' => date('Y-m-d H:i:s')
         );
 		$edit = $UserModel->editUser($userId,$data);
+		if(null != $this->request->getPost('bossId')){
+			$data2 = array(
+				'user_boss_id' => $this->request->getPost('bossId'),
+				'modified_by' => session()->get('userId'),
+				'date_time_modified' => date('Y-m-d H:i:s')
+			);
+			$edit2 = $UserModel->editUserBoss($userId,$data2);
+		}
 
-		$data2 = array(
-			'user_boss_id' => $this->request->getPost('bossId'),
-            'modified_by' => session()->get('userId'),
-			'date_time_modified' => date('Y-m-d H:i:s')
-		);
-		$edit2 = $UserModel->editUserBoss($userId,$data2);
-
-		if($edit2){
+		if($edit){
             return redirect()->to(base_url('employee')); 
 		}
 	}

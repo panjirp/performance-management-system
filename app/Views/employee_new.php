@@ -57,8 +57,8 @@
               </div>
 
               <div class="form-group">
-                <p class="text-req mt-4">Atasan<em>*</em></p>
-                <select class="custom-select" id="bossId" name="bossId" required>
+                <p class="text-req mt-4">Atasan</p>
+                <select class="custom-select" id="bossId" name="bossId">
                   <option value="0" selected disabled>Pilih Atasan</option>
                   <?php for ($i = 0; $i < count($user); $i++) {
                     echo "<option value=" . $user[$i]->id . ">".$user[$i]->name." - ".$user[$i]->departmentName." - ".$user[$i]->positionName."</option>";

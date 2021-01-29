@@ -66,9 +66,21 @@
                 </div>
               </div><!-- card-header -->
               <div class="card-body pd-y-30">
-                <div class="d-sm-flex">
-                  
-                </div>
+                  <div class="pd-20 pd-lg-25 pd-xl-30 pd-t-0-f">
+                    <div id="editor-container" class="">
+                      Type here..
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mg-t-10">
+                      <div id="toolbar-container" class="bd-0-f pd-0-f">
+                        <span class="ql-formats">
+                          <button class="ql-bold"></button>
+                          <button class="ql-italic"></button>
+                          <button class="ql-underline"></button>
+                        </span>
+                      </div>
+                      <button class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
               </div><!-- card-body -->
             </div><!-- card -->
 
@@ -79,9 +91,21 @@
                 </div>
               </div><!-- card-header -->
               <div class="card-body pd-y-30">
-                <div class="d-sm-flex">
-                  
-                </div>
+                  <div class="pd-20 pd-lg-25 pd-xl-30 pd-t-0-f">
+                    <div id="editor-container2" class="">
+                      Type here..
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mg-t-10">
+                      <div id="toolbar-container2" class="bd-0-f pd-0-f">
+                        <span class="ql-formats">
+                          <button class="ql-bold"></button>
+                          <button class="ql-italic"></button>
+                          <button class="ql-underline"></button>
+                        </span>
+                      </div>
+                      <button class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
               </div><!-- card-body -->
             </div><!-- card -->
           </div><!-- col -->
@@ -92,6 +116,22 @@
   </body>
   <?php include 'footer.php';?>
   <script>
+  var quill = new Quill('#editor-container', {
+    modules: {
+      toolbar: '#toolbar-container'
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'
+  });
+
+  var quill = new Quill('#editor-container2', {
+    modules: {
+      toolbar: '#toolbar-container2'
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'
+  });
+
     var flot1 = $.plot('#flotChart', [{
         data: df3,
         color: '#69b2f8'
